@@ -19,7 +19,7 @@ jobs:
         java-version: '17'
 
     - name: Compile project
-      run: javac *.java
+      run: javac src/*.java
 
     - name: Run tests
       run: echo "Tests ejecutados correctamente"
