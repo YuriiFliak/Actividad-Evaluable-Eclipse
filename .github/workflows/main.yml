@@ -9,8 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
     - name: Setup Java
       uses: actions/setup-java@v3
@@ -18,8 +17,5 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Compile project
-      run: javac src/*.java
-
-    - name: Run tests
-      run: echo "Tests ejecutados correctamente"
+    - name: Find and compile Java files
+      run: find . -name "*.java" -exec javac {} +
